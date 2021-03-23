@@ -4,6 +4,10 @@
 }
 
 .display-4 {
+  font-weight: bolder;
+}
+
+.display-4 {
   text-align: center;
 }
 
@@ -11,6 +15,10 @@
   background-color: rgb(173, 173, 173);
   float: left;
   height: 100vh;
+}
+
+.citySearch {
+  margin-top: 4%;
 }
 
 .cityContainer {
@@ -26,4 +34,5 @@
 
 .selectedCity {
   font-size: 2em;
+  font-weight: bold;
 }
