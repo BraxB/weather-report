@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Assets/style.css">
-    <title>Document</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="Assets/style.css" />
+    <title>Weather Report</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4">Weather Report</h1>
+    </div>
+    <aside class="menu col-xs-12 col-md-2">
+      <form>
+        <label for="citySearch">Search for a City:</label><br />
+        <input type="text" id="citySearch" name="citySearch" />
+        <button id="searchBtn" class="btn btn-primary">&#128269;</button>
+      </form>
+      <div class="history" id="history"></div>
+    </aside>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="Assets/script.js"></script>
-</body>
+    <div class="cityContainer col-xs-12 col-md-10">
+      <div class="cityInfo">
+        <div class="selectedCity">Atlanta</div>
+        <div class="temp">Temperature: 90.9</div>
+        <div class="humidity">Humidity: 41%</div>
+        <div class="wind">Wind Speed: 4.7 MPH</div>
+        <div class="uv">UV Index: 9.49</div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="Assets/script.js"></script>
+  </body>
 </html>
