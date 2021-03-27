@@ -1,6 +1,7 @@
 .jumbotron {
   margin-bottom: 0%;
-  background-color: darkcyan;
+  background-color: #4285f4;
+  color: white;
 }
 
 .display-4 {
@@ -42,9 +43,14 @@
   justify-content: center;
 }
 
-.dayCard {
-  background-color: blue;
-  color:rgb(255, 255, 255);
+.card {
+  background-color: #4285f4;
+  color: rgb(255, 255, 255);
   margin: 3%;
   padding: 2%;
+}
+
+#icon {
+  width: 50px;
+  align-self: center;
 }
