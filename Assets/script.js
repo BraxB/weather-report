@@ -17,6 +17,16 @@ var formSubmitHandler = function (event) {
   }
 };
 
+// function that passes info needed to get forecast for previously searched city when history button is clicked
+var historyHandler = function (clickedId) {
+  let city = clickedId;
+  let coords = JSON.parse(localStorage.getItem(clickedId));
+  let lat = coords[0];
+  let lon = coords[1];
+  forecastEl.innerHTML = "";
+  getWeather(city, lat, lon);
+}
+
 // save searched city to local storage
 var saveCity = function(city, data) {
   let lat = data.lat;
@@ -31,7 +41,7 @@ var showHistory = function() {
   for (i = 0; i < localStorage.length; i++) {
     let searchedCity = localStorage.key(i);
     historyEl.innerHTML += `
-    <button class="btn-block">${searchedCity}</button>
+    <button class="btn-block" id="${searchedCity}" onClick="historyHandler(this.id)">${searchedCity}</button>
     `
   }
 }
