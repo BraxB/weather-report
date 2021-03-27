@@ -36,3 +36,15 @@
   font-size: 2em;
   font-weight: bold;
 }
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.dayCard {
+  background-color: blue;
+  color:rgb(255, 255, 255);
+  margin: 3%;
+  padding: 2%;
+}
