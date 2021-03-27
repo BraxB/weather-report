@@ -1,20 +1,44 @@
-// var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?q=Paris&units=metric&appid=4354bae4bc4f80de34b0ce15453d2200"
+var inputEl = document.querySelector("#searchInput");
+var searchEl = document.querySelector("#citySearch");
+var currentWeather = document.querySelector("#cityInfo");
 
-function getApi(requestUrl) {
-    fetch(requestUrl)
-      .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-      return data;
-    })
+// this function handles button clicks to submit the search input
+var formSubmitHandler = function (event) {
+  event.preventDefault();
+
+  var city = inputEl.value.trim();
+
+  if (city) {
+    getCoord(city);
+
+    inputEl.value = '';
+  } else {
+    alert('Please Enter a City');
   }
+};
 
-$("#searchBtn").on("click", function() {
-  var city = $("#searchInput").val();
-  var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=4354bae4bc4f80de34b0ce15453d2200"
-  var data = getApi(requestUrl);
-  $(".selectedCity").html(city);
-  debugger
-  $(".temp").html("Temperature: " + data.list[0].temp);
-})
+//save data I need to variables
+var formatData = function (city, data) {
+  currentTemp = data.current.temp;
+  humidity = data.current.humidity;
+  windspeed = data.current.wind_speed;
+  showWeather(city, currentTemp, humidity, windspeed);
+}
+
+//use variables from formatData to display
+var showWeather = function (city, currentTemp, humidity, windspeed) {
+  currentWeather.innerHTML = `<div class="selectedCity">${city}</div>
+    <div class="temp">Temperature: ${currentTemp}</div>
+    <div class="humidity">Humidity: ${humidity}%</div>
+    <div class="wind">Wind Speed: ${windspeed}MPH</div>
+    <div class="uv"></div>`
+}
+
+//build out 5day forecast
+var forecast = function (data) {
+  for (i = 1; i < 5; i++) {
+    
+  }
+}
+
+searchEl.addEventListener("submit", formSubmitHandler);

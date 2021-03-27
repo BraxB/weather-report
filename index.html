@@ -16,52 +16,59 @@
       <h1 class="display-4">Weather Report</h1>
     </div>
     <aside class="menu col-xs-12 col-md-2">
-      <form class="citySearch">
+      <form class="citySearch" id="citySearch">
         <label for="searchInput">Search for a City:</label><br />
-        <input type="text" id="searchInput" name="searchInput" />
-        <button id="searchBtn" class="btn btn-primary">&#128269;</button>
+        <input
+          type="text"
+          class="col-xs-8"
+          id="searchInput"
+          name="searchInput"
+        />
+        <button id="searchBtn" class="btn btn-primary col-xs-4" type="submit">
+          &#128269;
+        </button>
       </form>
       <div class="history" id="history"></div>
     </aside>
 
     <div class="cityContainer col-xs-12 col-md-10">
-      <div class="cityInfo">
-        <div class="selectedCity"></div>
+      <div class="cityInfo" id="cityInfo">
+        <!-- <div class="selectedCity"></div>
         <div class="temp"></div>
         <div class="humidity"></div>
         <div class="wind"></div>
-        <div class="uv"></div>
+        <div class="uv"></div> -->
       </div>
     </div>
 
     <div class="5day row">
-      <div class="dayCard col-xs-2" id="1"> 
+      <div class="dayCard col-xs-2" id="1">
         <h3 id="date"></h3>
-        <img id="icon">
+        <img id="icon" />
         <p id="temperature"></p>
         <p id="humidity"></p>
       </div>
-      <div class="dayCard col-xs-2" id="2"> 
+      <div class="dayCard col-xs-2" id="2">
         <h3 id="date"></h3>
-        <img id="icon">
+        <img id="icon" />
         <p id="temperature"></p>
         <p id="humidity"></p>
       </div>
-      <div class="dayCard col-xs-2" id="3"> 
+      <div class="dayCard col-xs-2" id="3">
         <h3 id="date"></h3>
-        <img id="icon">
+        <img id="icon" />
         <p id="temperature"></p>
         <p id="humidity"></p>
       </div>
-      <div class="dayCard col-xs-2" id="4"> 
+      <div class="dayCard col-xs-2" id="4">
         <h3 id="date"></h3>
-        <img id="icon">
+        <img id="icon" />
         <p id="temperature"></p>
         <p id="humidity"></p>
       </div>
-      <div class="dayCard col-xs-2" id="5"> 
+      <div class="dayCard col-xs-2" id="5">
         <h3 id="date"></h3>
-        <img id="icon">
+        <img id="icon" />
         <p id="temperature"></p>
         <p id="humidity"></p>
       </div>
@@ -70,6 +77,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="Assets/apicalls.js"></script>
     <script src="Assets/script.js"></script>
   </body>
 </html>
