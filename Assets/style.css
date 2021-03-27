@@ -54,3 +54,8 @@
   width: 50px;
   align-self: center;
 }
+
+.btn-group-vertical {
+  margin-top: 3%;
+  width: 100%;
+}

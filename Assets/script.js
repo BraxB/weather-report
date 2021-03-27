@@ -2,6 +2,7 @@ var inputEl = document.querySelector("#searchInput");
 var searchEl = document.querySelector("#citySearch");
 var currentWeather = document.querySelector("#cityInfo");
 var forecastEl = document.querySelector("#forecast");
+var historyEl = document.querySelector("#history");
 
 // this function handles button clicks to submit the search input
 var formSubmitHandler = function (event) {
@@ -16,12 +17,32 @@ var formSubmitHandler = function (event) {
   }
 };
 
+// save searched city to local storage
+var saveCity = function(city, data) {
+  let lat = data.lat;
+  let lon = data.lon;
+  var coord = [lat, lon];
+  localStorage.setItem(city, JSON.stringify(coord));
+  showHistory();
+}
+
+// get history from local storage and add it to the GUI
+var showHistory = function() {
+  for (i = 0; i < localStorage.length; i++) {
+    let searchedCity = localStorage.key(i);
+    historyEl.innerHTML += `
+    <button class="btn-block">${searchedCity}</button>
+    `
+  }
+}
+
 //save data needed to variables
 var formatData = function (city, data) {
   currentTemp = data.current.temp;
   humidity = data.current.humidity;
   windspeed = data.current.wind_speed;
   uvi = data.current.uvi;
+  saveCity(city, data);
   showWeather(city, currentTemp, humidity, windspeed, uvi);
   forecast(data);
 }
