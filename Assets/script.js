@@ -22,7 +22,9 @@ var formatData = function (city, data) {
   currentTemp = data.current.temp;
   humidity = data.current.humidity;
   windspeed = data.current.wind_speed;
-  showWeather(city, currentTemp, humidity, windspeed);
+  uvi = data.current.uvi;
+  showWeather(city, currentTemp, humidity, windspeed, uvi);
+  forecast(data);
 }
 
 //use variables from formatData to display
@@ -31,7 +33,15 @@ var showWeather = function (city, currentTemp, humidity, windspeed) {
     <div class="temp">Temperature: ${currentTemp}</div>
     <div class="humidity">Humidity: ${humidity}%</div>
     <div class="wind">Wind Speed: ${windspeed}MPH</div>
-    <div class="uv"></div>`
+    <div class="uv">UV Index: <button class="btn" id="uv-btn">${uvi}</button></div>`
+  var uvEl = document.querySelector("#uv-btn");
+  if (uvi < 3) {
+    uvEl.classList.add("btn-success");
+  } else if (uvi > 3 || uvi < 6) {
+    uvEl.classList.add("btn-warning");
+  } else {
+    uvEl.classList.add("btn-danger");
+  }
 }
 
 //build out 5day forecast
