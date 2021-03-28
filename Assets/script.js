@@ -42,7 +42,7 @@ var showHistory = function() {
   for (i = 0; i < localStorage.length; i++) {
     let searchedCity = localStorage.key(i);
     historyEl.innerHTML += `
-    <button class="btn-block" id="${searchedCity}" onClick="historyHandler(this.id)">${searchedCity}</button>
+    <button class="btn-block btn-secondary" id="${searchedCity}" onClick="historyHandler(this.id)">${searchedCity}</button>
     `
   }
 }
