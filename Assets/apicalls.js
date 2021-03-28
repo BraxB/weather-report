@@ -1,5 +1,5 @@
 var getCoord = function (city) {
-    var coordUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=4354bae4bc4f80de34b0ce15453d2200";
+    var coordUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=771a23d6d05fd5b1ef86916f19186400";
   
     fetch(coordUrl)
       .then(function (response) {
