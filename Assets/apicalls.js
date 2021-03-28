@@ -25,7 +25,7 @@ var getCoord = function (city) {
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
-            formatData(city, data);
+            parseData(city, data);
           });
         } else {
           alert('Error: ' + response.statusText);

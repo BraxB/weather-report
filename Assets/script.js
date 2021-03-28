@@ -48,7 +48,7 @@ var showHistory = function() {
 }
 
 //save data needed to variables
-var formatData = function (city, data) {
+var parseData = function (city, data) {
   currentTemp = data.current.temp;
   humidity = data.current.humidity;
   windspeed = data.current.wind_speed;
@@ -60,6 +60,7 @@ var formatData = function (city, data) {
 
 //use variables from formatData to display
 var showWeather = function (city, currentTemp, humidity, windspeed) {
+  $(".cityContainer").show();
   currentWeather.innerHTML = `
     <div class="selectedCity">${city}</div>
     <div class="temp">Temperature: ${currentTemp}°F</div>

@@ -22,13 +22,18 @@
   margin-top: 4%;
 }
 
-.searchInput {
-  width: 70%;
+#searchInput {
+  width: 100%;
+}
+
+#searchBtn {
+  width: 100%;
 }
 
 .cityContainer {
   float: right;
   margin-top: 1%;
+  display: none;
 }
 
 .cityInfo {
@@ -62,4 +67,10 @@
 .btn-group-vertical {
   margin-top: 3%;
   width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    height: auto;
+  }
 }
