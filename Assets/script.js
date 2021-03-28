@@ -38,6 +38,7 @@ var saveCity = function(city, data) {
 
 // get history from local storage and add it to the GUI
 var showHistory = function() {
+  historyEl.innerHTML = "";
   for (i = 0; i < localStorage.length; i++) {
     let searchedCity = localStorage.key(i);
     historyEl.innerHTML += `

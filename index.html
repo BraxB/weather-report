@@ -11,20 +11,15 @@
     <link rel="stylesheet" href="Assets/style.css" />
     <title>Weather Report</title>
   </head>
-  <body>
+  <body onload="showHistory();">
     <div class="jumbotron">
       <h1 class="display-4">Weather Report</h1>
     </div>
     <aside class="menu col-xs-2 col-md-2">
       <form class="citySearch" id="citySearch">
         <label for="searchInput">Search for a City:</label><br />
-        <input
-          type="text"
-          class="col-xs-8"
-          id="searchInput"
-          name="searchInput"
-        />
-        <button id="searchBtn" class="btn btn-primary col-xs-4" type="submit">
+        <input type="text" id="searchInput" name="searchInput" />
+        <button id="searchBtn" class="btn btn-primary" type="submit">
           &#128269;
         </button>
       </form>
